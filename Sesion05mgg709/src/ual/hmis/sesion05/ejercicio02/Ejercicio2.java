@@ -4,9 +4,9 @@ public class Ejercicio2 {
 	
 	public boolean login (String username, String password){   
 		// comprobar que sean distintos de vacio  
-		if (username.equals(null))
+		if (username.equals(""))
 			return false;
-		if(password.equals(null))
+		if(password.equals(""))
 			return false;
 		// comprobar que la longitud sea < 30    
 		if(username.length()<30 && password.length()<30){
