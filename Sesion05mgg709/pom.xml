@@ -78,18 +78,6 @@
 							<javadocExecutable>${java.home}/bin/javadoc</javadocExecutable>
 						</configuration>
 					</plugin>
-						<plugin>
-				<groupId>org.owasp</groupId>
-				<artifactId>dependency-check-maven</artifactId>
-				<version>5.3.2</version>
-				<configuration>
-					<skipTestScope>false</skipTestScope>
-					<formats> 
-            <format>HTML</format>
-            <format>XML</format>
-          </formats>
-				</configuration>
-			</plugin>
     </plugins>
 		</build>
 		<reporting>
@@ -139,6 +127,25 @@
 						<artifactId>maven-project-info-reports-plugin</artifactId>
 						<version>3.0.0</version>
 					</plugin>
+							<plugin>
+                <groupId>org.owasp</groupId>
+                <artifactId>dependency-check-maven</artifactId>
+                <version>7.1.0</version>
+                <configuration>
+                    <skipTestScope>false</skipTestScope>
+                    <formats>
+                        <format>HTML</format>
+                        <format>XML</format>
+                    </formats>
+                </configuration>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>aggregate</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
 			</plugins>
 		</reporting>
 		<dependencies>
